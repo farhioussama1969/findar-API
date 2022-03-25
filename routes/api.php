@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/test', function () {
-    return 'hello';
+    return 'hi';
 });
 
 Route::get('/test/showdata/{id}', [TestController::class, "show"])->where(['id' => '[0-9]+']);
