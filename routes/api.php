@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/test', function () {
     return 'hello';
 });
+
+Route::get('/test/showdata/{id}', [TestController::class, "show"])->where(['id' => '[0-9]+']);
 
